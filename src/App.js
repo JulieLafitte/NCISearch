@@ -1,23 +1,16 @@
-import { useEffect } from 'react';
+import React from 'react';
 
-const API_URL = 'http://www.omdbapi.com?apikey=5419f7b4'
+import { Header, Seasons } from './container';
+import { Footer, Navbar } from './components';
+import './App.css';
 
-const App = () => {
-    
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`);
-        const data = await response.json();
-
-        console.log(data.Search);
-    }
-
-    useEffect(() => {   
-        searchMovies('Spiderman');
-    }, []);
-    
-    return (
-        <h1>App</h1>
-    );
-}
+const App = () => (
+  <div>
+    <Header />
+    <Navbar />
+    <Seasons />
+    <Footer />
+  </div>
+);
 
 export default App;
